@@ -1,0 +1,138 @@
+:root{
+  --bg1:#05070a;
+  --bg2:#0b2036;
+  --bg3:#0d3b4f;
+  --teal:#14b8a6;
+  --blue:#1e6091;
+  --white:#f5f7fa;
+  --glass: rgba(255,255,255,0.06);
+  --glass-border: rgba(255,255,255,0.12);
+  --radius:14px;
+  --transition:0.25s ease;
+}
+
+*{box-sizing:border-box; margin:0; padding:0;}
+
+html{scroll-behavior:smooth;}
+
+body{
+  font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: linear-gradient(180deg, var(--bg1) 0%, var(--bg2) 35%, var(--bg3) 65%, var(--teal) 100%);
+  color:var(--white);
+  line-height:1.6;
+  min-height:100vh;
+}
+
+/* ==== NAVBAR (frosted glass ala macOS) ==== */
+.navbar{
+  position:sticky; top:0; z-index:10;
+  display:flex; justify-content:space-between; align-items:center;
+  padding:1rem 2rem;
+  background:var(--glass);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom:1px solid var(--glass-border);
+}
+.navbar .logo{font-weight:700; letter-spacing:1px; color:var(--white); text-decoration:none;}
+.navbar nav{display:flex; gap:1.5rem;}
+.navbar nav a{color:var(--white); text-decoration:none; opacity:0.85; transition:opacity var(--transition);}
+.navbar nav a:hover{opacity:1;}
+.menu-toggle{display:none; background:none; border:none; color:var(--white); font-size:1.4rem; cursor:pointer;}
+
+/* ==== HERO ==== */
+.hero{
+  min-height:80vh;
+  display:flex; flex-direction:column; justify-content:center; align-items:center;
+  text-align:center; padding:2rem;
+}
+.mac-dots{display:flex; gap:8px; margin-bottom:1.5rem;}
+.mac-dots span{width:12px; height:12px; border-radius:50%;}
+.mac-dots span:nth-child(1){background:#ff5f57;}
+.mac-dots span:nth-child(2){background:#febc2e;}
+.mac-dots span:nth-child(3){background:#28c840;}
+.hero h1{font-size:2.6rem; letter-spacing:1px;}
+.hero .subtitle{margin-top:0.4rem; color:#cfe3e3; font-size:1.05rem;}
+.hero .location{margin-top:0.2rem; color:#9fb8c2; font-size:0.9rem;}
+
+/* ==== TOMBOL ALA macOS ==== */
+.mac-btn{
+  display:inline-block; margin-top:1.5rem;
+  padding:0.65rem 1.5rem;
+  background: var(--glass);
+  border:1px solid var(--glass-border);
+  backdrop-filter: blur(10px);
+  border-radius:999px;
+  color:var(--white); text-decoration:none; font-weight:600; font-size:0.95rem;
+  transition: transform var(--transition), background var(--transition);
+}
+.mac-btn:hover{ background:rgba(255,255,255,0.14); transform:translateY(-2px);}
+.mac-btn:active{ transform:scale(0.96); }
+.mac-btn.primary{ background:linear-gradient(180deg, var(--teal), var(--blue)); border:none;}
+
+/* ==== SECTIONS ==== */
+.section{padding:4rem 2rem; max-width:1000px; margin:0 auto;}
+.section.alt{ background:rgba(255,255,255,0.03); border-radius:var(--radius); }
+.section h2{margin-bottom:1.5rem; font-size:1.7rem;}
+
+/* Reveal saat scroll */
+.reveal{ opacity:0; transform:translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
+.reveal.visible{ opacity:1; transform:translateY(0); }
+
+/* ==== GRID & KARTU ==== */
+.grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(220px,1fr)); gap:1.25rem;}
+.card, .mac-card{
+  background:var(--glass);
+  border:1px solid var(--glass-border);
+  backdrop-filter: blur(12px);
+  border-radius:var(--radius);
+  padding:1.25rem;
+  text-decoration:none; color:var(--white); display:block;
+  transition: transform var(--transition), background var(--transition);
+}
+.mac-card:hover{ transform:translateY(-4px); background:rgba(255,255,255,0.09); }
+.card-link{ display:block; margin-top:0.5rem; font-size:0.85rem; color:var(--teal); }
+
+/* ==== LAYOUT KOLOM ("Collum") ==== */
+.column-layout{
+  display:grid; grid-template-columns: 1fr 1fr; gap:1.5rem; margin-bottom:1.5rem;
+}
+.col-block{
+  background:var(--glass); border:1px solid var(--glass-border);
+  border-radius:var(--radius); padding:1.25rem; backdrop-filter: blur(12px);
+}
+
+/* ==== SKILLS: scroll-snap horizontal (swipe di HP) ==== */
+.skills-scroll{
+  display:flex; gap:1rem; overflow-x:auto; padding-bottom:0.5rem;
+  scroll-snap-type: x mandatory;
+}
+.skill-pill{
+  flex:0 0 160px; scroll-snap-align:start;
+  background:var(--glass); border:1px solid var(--glass-border);
+  border-radius:var(--radius); padding:1rem;
+}
+.skill-bar{ height:6px; background:rgba(255,255,255,0.15); border-radius:4px; margin-top:0.5rem; overflow:hidden; }
+.skill-fill{ height:100%; background:linear-gradient(90deg, var(--teal), var(--blue)); }
+
+/* ==== SPONSOR ==== */
+.sponsor-row{ display:flex; flex-wrap:wrap; gap:1rem; }
+
+/* ==== HALAMAN DETAIL ==== */
+.detail-wrap{ max-width:800px; margin:3rem auto; padding:0 2rem; }
+.detail-wrap h1{ margin-bottom:1rem; }
+.detail-wrap .summary{ color:#cfe3e3; margin-bottom:1.5rem; }
+.detail-body{ margin-bottom:2rem; }
+
+footer{ text-align:center; padding:1.5rem; color:#9fb8c2; font-size:0.85rem; }
+
+@media (max-width:640px){
+  .navbar nav{
+    position:absolute; top:100%; right:0; left:0;
+    flex-direction:column; background:rgba(5,7,10,0.95);
+    display:none; padding:1rem;
+  }
+  .navbar nav.open{display:flex;}
+  .menu-toggle{display:block;}
+  .hero h1{font-size:2.1rem;}
+  .column-layout{grid-template-columns:1fr;}
+}
