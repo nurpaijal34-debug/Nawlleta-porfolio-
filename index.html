@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nawlleta Driver Fiel — Portofolio</title>
+<link rel="style.css" href="style.css">
+</head>
+<body>
+
+<header class="navbar">
+  <div class="logo">NAWLIET</div>
+  <nav>
+    <a href="#about">Tentang</a>
+    <a href="#statistik">Statistik</a>
+    <a href="#framework">Framework</a>
+    <a href="#projects">Proyek</a>
+    <a href="#sponsor">Sponsor</a>
+    <a href="#contact">Kontak</a>
+  </nav>
+  <button class="menu-toggle" id="menuToggle" aria-label="Buka menu">☰</button>
+</header>
+
+<section class="hero">
+  <div class="mac-dots"><span></span><span></span><span></span></div>
+  <h1 id="profileName">—</h1>
+  <p class="subtitle" id="profileRole">—</p>
+  <p class="location" id="profileLocation">—</p>
+  <a href="#projects" class="mac-btn primary">Lihat Proyek</a>
+</section>
+
+<section id="about" class="section reveal">
+  <h2>Tentang</h2>
+  <p id="profileTagline">—</p>
+</section>
+
+<section id="statistik" class="section alt reveal">
+  <h2>Kolom Statistik</h2>
+  <div class="column-layout">
+    <div class="col-block">
+      <h3>Kognitif</h3>
+      <p>IQ: <strong id="statIQ">—</strong> · MBTI: <strong id="statMBTI">—</strong> · Enneagram: <strong id="statEnneagram">—</strong></p>
+      <p>Typology: <span id="statTypology">—</span> · Ideologis: <span id="statIdeologis">—</span> · <span id="statMindset">—</span></p>
+    </div>
+    <div class="col-block">
+      <h3>Rincian Tes</h3>
+      <div class="grid" id="statsGrid"></div>
+    </div>
+  </div>
+  <div class="skills-scroll" id="skillsRow"></div>
+</section>
+
+<section id="framework" class="section reveal">
+  <h2>Framework Berpikir</h2>
+  <div class="grid">
+    <div class="card mac-card">
+      <h3>Validasi Ofensif</h3>
+      <p>Menguji ide dengan menyerangnya lebih dulu, bukan menunggu orang lain membantahnya.</p>
+    </div>
+    <div class="card mac-card">
+      <h3>Spiral Reasoning</h3>
+      <p>Berputar ulang ke masalah yang sama dari sudut pandang berbeda tiap iterasi.</p>
+    </div>
+    <div class="card mac-card">
+      <h3>Spesialisasi Fokus</h3>
+      <p>Satu hal dikerjakan sampai dalam, bukan banyak hal setengah-setengah.</p>
+    </div>
+  </div>
+</section>
+
+<section id="projects" class="section alt reveal">
+  <h2>Proyek</h2>
+  <div class="grid" id="projectGrid"></div>
+</section>
+
+<section id="sponsor" class="section reveal">
+  <h2>Dukung Proyek Open-Source Saya</h2>
+  <div class="sponsor-row" id="sponsorRow"></div>
+</section>
+
+<section id="contact" class="section alt reveal">
+  <h2>Kontak</h2>
+  <p>Terbuka untuk kolaborasi proyek website, pengajaran, atau diskusi ide.</p>
+  <a href="mailto:isiname@gmail.com/@example" class="mac-btn primary">Kirim Email</a>
+</section>
+
+<footer>
+  <p>&copy; <span id="year"></span> Dibangun manual, bukan template.</p>
+</footer>
+
+<script src="data.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
